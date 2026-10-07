@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GearLoop – Rent Gaming Consoles & Gadgets</title>
+  <meta name="description" content="Rent PS5, Xbox, VR headsets, cameras, drones and more by the day, week or month. Delivered to your door." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <span>🚚 Free delivery &amp; pickup on rentals above ₹999</span>
+    <span class="topbar-right">Refundable deposit · No hidden fees</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="GearLoop home">
+        <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" rx="11" fill="#14213d"/>
+          <path d="M12 20a8 8 0 0 1 14-5.3M28 20a8 8 0 0 1-14 5.3" stroke="#c6ff3d" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+          <path d="M25 9.5l2 5.5-5.6.6M15 30.5l-2-5.5 5.6-.6" stroke="#c6ff3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span>Gear<b>Loop</b></span>
+      </a>
+
+      <div class="city-picker">
+        <label for="citySelect" class="sr-only">City</label>
+        <span class="pin">📍</span>
+        <select id="citySelect"></select>
+      </div>
+
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search PS5, drone, camera…" aria-label="Search products" />
+      </div>
+
+      <nav class="nav">
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <button id="cartBtn" class="cart-btn" aria-label="Open cart">
+          🛒 <span>Cart</span><em id="cartCount">0</em>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Rent · Play · Return</p>
+          <h1>Play more.<br/>Own <span class="hl">less.</span></h1>
+          <p class="lead">Consoles, VR, cameras, drones and laptops delivered to your door in <strong id="heroCity">Bengaluru</strong>. Rent for a weekend or a whole month.</p>
+          <div class="hero-cta">
+            <a href="#catalog" class="btn btn-primary">Browse gadgets</a>
+            <a href="#how" class="btn btn-ghost">How it works</a>
+          </div>
+          <ul class="hero-stats">
+            <li><b>2,400+</b><span>Rentals shipped</span></li>
+            <li><b>4.8★</b><span>Avg. rating</span></li>
+            <li><b>24 hr</b><span>Delivery</span></li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="blob"></div>
+          <div class="floatcard c1">🎮<small>PS5 · ₹399/day</small></div>
+          <div class="floatcard c2">🥽<small>VR · ₹499/day</small></div>
+          <div class="floatcard c3">🚁<small>Drone · ₹799/day</small></div>
+          <div class="floatcard c4">📷<small>Camera · ₹599/day</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Rent anything, for any plan</h2>
+            <p class="muted" id="resultInfo"></p>
+          </div>
+          <div class="sort">
+            <label for="sortSelect">Sort</label>
+            <select id="sortSelect">
+              <option value="popular">Most popular</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+              <option value="name">Name A–Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="chips" id="chips" role="tablist" aria-label="Categories"></div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>
+          <p>😕 No gadgets match your search in this city.</p>
+          <button class="btn btn-ghost" id="resetBtn">Reset filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section alt" id="how">
+      <div class="container">
+        <h2 class="center">Three steps. Zero commitment.</h2>
+        <div class="steps">
+          <article class="step"><span class="num">1</span><h3>Pick &amp; schedule</h3><p>Choose your gear and the rental period. Longer rentals unlock lower daily rates.</p></article>
+          <article class="step"><span class="num">2</span><h3>We deliver</h3><p>Sanitised, tested and delivered to your doorstep within 24 hours in your city.</p></article>
+          <article class="step"><span class="num">3</span><h3>Enjoy &amp; return</h3><p>Use it, love it. We pick it up on the last day and refund your deposit.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="section">
+      <div class="container">
+        <h2 class="center">Why people loop with us</h2>
+        <div class="features">
+          <div class="feature"><span>🛡️</span><h4>Tested &amp; sanitised</h4><p>Every item is checked and cleaned before it ships.</p></div>
+          <div class="feature"><span>💸</span><h4>Cheaper than buying</h4><p>Try a ₹50,000 gadget for the price of a pizza.</p></div>
+          <div class="feature"><span>🔁</span><h4>Flexible tenure</h4><p>From 1 day to 3 months. Extend any time.</p></div>
+          <div class="feature"><span>🎧</span><h4>Human support</h4><p>Real people on chat, 9am – 9pm every day.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section alt" id="faq">
+      <div class="container narrow">
+        <h2 class="center">Frequently asked questions</h2>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta-inner">
+        <h2>Got a weekend plan? Get the gear.</h2>
+        <a href="#catalog" class="btn btn-primary">Start renting</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="logo light"><span>Gear<b>Loop</b></span></a>
+        <p>Rent premium gaming and gadget gear across India. A demo project.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#catalog">Catalog</a>
+      </div>
+      <div>
+        <h5>Cities</h5>
+        <p id="footerCities"></p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="mailto:hello@gearloop.example">hello@gearloop.example</a>
+        <a href="tel:+910000000000">+91 00000 00000</a>
+      </div>
+    </div>
+    <div class="container copy">© <span id="year"></span> GearLoop. All rights reserved. Demo storefront – not a real business.</div>
+  </footer>
+
+  <!-- Product modal -->
+  <div class="overlay" id="productOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <button class="close" id="closeModal" aria-label="Close">✕</button>
+      <div class="modal-grid">
+        <div class="modal-art" id="mArt"></div>
+        <div class="modal-body">
+          <p class="eyebrow" id="mCat"></p>
+          <h3 id="mTitle"></h3>
+          <p class="muted" id="mDesc"></p>
+          <ul class="specs" id="mSpecs"></ul>
+
+          <div class="rates" id="mRates"></div>
+
+          <label class="field-label">Rental duration</label>
+          <div class="presets" id="presets"></div>
+          <div class="duration">
+            <button id="dMinus" aria-label="Decrease days">−</button>
+            <input id="dInput" type="number" min="1" max="90" value="3" />
+            <button id="dPlus" aria-label="Increase days">+</button>
+            <span>days</span>
+          </div>
+
+          <label class="field-label" for="startDate">Start date</label>
+          <input type="date" id="startDate" class="input" />
+
+          <div class="summary">
+            <div><span>Rent (<b id="sDays">3</b> days)</span><b id="sRent">₹0</b></div>
+            <div><span>Refundable deposit</span><b id="sDep">₹0</b></div>
+            <div class="total"><span>Pay now</span><b id="sTotal">₹0</b></div>
+          </div>
+          <button class="btn btn-primary block" id="addToCart">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart drawer -->
+  <div class="overlay right" id="cartOverlay" hidden>
+    <aside class="drawer" aria-label="Cart">
+      <div class="drawer-head">
+        <h3>Your cart</h3>
+        <button class="close static" id="closeCart" aria-label="Close cart">✕</button>
+      </div>
+      <div class="drawer-body" id="cartItems"></div>
+      <div class="drawer-foot" id="cartFoot">
+        <div class="summary">
+          <div><span>Rent</span><b id="cRent">₹0</b></div>
+          <div><span>Refundable deposit</span><b id="cDep">₹0</b></div>
+          <div><span>Delivery</span><b id="cDel">Free</b></div>
+          <div class="total"><span>Total</span><b id="cTotal">₹0</b></div>
+        </div>
+        <button class="btn btn-primary block" id="checkoutBtn">Checkout</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Checkout modal -->
+  <div class="overlay" id="checkoutOverlay" hidden>
+    <div class="modal small" role="dialog" aria-modal="true" aria-labelledby="coTitle">
+      <button class="close" id="closeCheckout" aria-label="Close">✕</button>
+      <form id="checkoutForm" novalidate>
+        <h3 id="coTitle">Delivery details</h3>
+        <label class="field-label" for="coName">Full name</label>
+        <input class="input" id="coName" required placeholder="Your name" />
+        <label class="field-label" for="coPhone">Phone</label>
+        <input class="input" id="coPhone" required inputmode="numeric" maxlength="10" placeholder="10-digit mobile" />
+        <label class="field-label" for="coAddress">Address</label>
+        <textarea class="input" id="coAddress" rows="3" required placeholder="Flat, street, area"></textarea>
+        <label class="field-label" for="coPin">Pincode</label>
+        <input class="input" id="coPin" required inputmode="numeric" maxlength="6" placeholder="6-digit pincode" />
+        <p class="error" id="coError" hidden></p>
+        <button class="btn btn-primary block" type="submit">Place order</button>
+        <p class="muted tiny">Demo checkout: your order is saved in this browser only.</p>
+      </form>
+      <div class="success" id="coSuccess" hidden>
+        <div class="tick">✓</div>
+        <h3>Order placed!</h3>
+        <p class="muted" id="coMsg"></p>
+        <a class="btn btn-ghost block" id="waLink" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <button class="btn btn-primary block" id="coDone">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
